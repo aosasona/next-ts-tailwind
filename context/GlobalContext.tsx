@@ -8,9 +8,7 @@ interface ContextInterface {
 const GlobalContext = createContext<any>(null);
 const { Provider } = GlobalContext;
 
-export const GlobalProvider: FC<ContextInterface | null | any> = ({
-  children,
-}) => {
+const GlobalProvider: FC<ContextInterface | null | any> = ({ children }) => {
   const [Username, setUsername] = useState();
 
   return (
@@ -24,3 +22,5 @@ export const GlobalProvider: FC<ContextInterface | null | any> = ({
     </Provider>
   );
 };
+
+export { GlobalContext, GlobalProvider };
